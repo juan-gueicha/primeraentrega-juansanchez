@@ -1,0 +1,7 @@
+Para configurar un proyecto desde cero con Tailwind CSS primero necesitas tener instalado Node.js en tu sistema, lo cual puedes comprobar ejecutando el comando node -v en la terminal para asegurarte de que está disponible, 
+luego debes inicializar tu proyecto con npm init -y lo que generará un archivo package.json, después instala Tailwind CSS y su CLI como dependencias de desarrollo con npm install -D tailwindcss @tailwindcss/cli, una vez hecho esto debes organizar tu proyecto creando una carpeta llamada input donde colocarás un archivo input.css y dentro de él añadirás la directiva @import "tailwindcss"; que será la que incluya las utilidades de Tailwind,
+también crea una carpeta llamada public donde tendrás el archivo final compilado style.css y en la raíz del proyecto coloca un archivo index.html que será tu página principal, 
+después abre el archivo package.json y en la sección de scripts agrega "watch": "npx @tailwindcss/cli -i ./input/input.css -o ./public/style.css --watch" para que Tailwind compile automáticamente, 
+en tu index.html debes enlazar el archivo generado public/style.css dentro de la etiqueta <head> con <link href="./public/style.css" rel="stylesheet">,
+y finalmente para poner en marcha todo abre la terminal y ejecuta npm run watch con lo que Tailwind quedará observando los cambios que hagas en input/input.css y actualizará el archivo de salida en public/style.css de manera automática, 
+permitiéndote trabajar en tu HTML y ver los estilos aplicados en tiempo real al abrir tu archivo en el navegador.
